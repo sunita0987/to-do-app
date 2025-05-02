@@ -1,9 +1,8 @@
-import React from 'react';
-import './App.css'
-import { useState } from 'react';
-import TaskForm from './components/TaskForm';
-import TaskList from './components/TaskList';
-
+import React from "react";
+import "./App.css";
+import { useState } from "react";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
@@ -12,13 +11,15 @@ export default function App() {
   };
 
   const toggleTask = (id) => {
-    setTasks(tasks.map(task =>
-      task.id === id ? { ...task, done: !task.done } : task
-    ));
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, done: !task.done } : task
+      )
+    );
   };
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter(task => task.id !== id));
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   return (

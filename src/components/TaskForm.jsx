@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import React from 'react';
+import { useState } from "react";
+import React from "react";
 export default function TaskForm({ onAdd }) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim() === '') return;
+    if (text.trim() === "") return;
     onAdd(text);
-    setText('');
+    setText("");
   };
 
   return (
