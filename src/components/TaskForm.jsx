@@ -2,14 +2,12 @@ import { useState } from "react";
 import React from "react";
 export default function TaskForm({ onAdd }) {
   const [text, setText] = useState("");
-
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     if (text.trim() === "") return;
-    onAdd(text);
-    setText("");
+    onAdd(text); 
+    setText(""); 
   };
-
   return (
     <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
       <input
