@@ -1,5 +1,7 @@
 import { useState } from "react";
 import React from "react";
+
+
 export default function TaskForm({ onAdd }) {
   const [text, setText] = useState("");
   const handleSubmit = (e) => {
@@ -7,6 +9,7 @@ export default function TaskForm({ onAdd }) {
     if (text.trim() === "") return;
     onAdd(text); 
     setText(""); 
+
   };
   return (
     <form onSubmit={handleSubmit} className="flex gap-2 mb-4">

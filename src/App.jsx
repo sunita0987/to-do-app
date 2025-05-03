@@ -1,15 +1,17 @@
 import React from "react";
 import "./App.css";
 import { useState } from "react";
+import { useLocalStorage } from "./utils/localstorage";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
+  const [input, setinput] = useState([]);
+  const [tasks, setTasks] = useLocalStorage('tasks', []);
+
   const addTask = (text) => {
     setTasks([...tasks, { id: Date.now(), text, done: false }]);
   };
-
   const toggleTask = (id) => {
     setTasks(
       tasks.map((task) =>
